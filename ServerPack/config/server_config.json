@@ -1,0 +1,13 @@
+{
+  "_comment": "rvc_ws_server.py 경로/모델 설정. 환경변수가 있으면 환경변수가 우선합니다.",
+
+  "models_root":       "models/voices",
+  "hubert_path":       "models/base/hubert_base.pt",
+  "rmvpe_model_path":  "models/base/rmvpe.onnx",
+
+  "default_model_id":  "",
+
+  "device":            "cuda",
+  "is_half":           "true",
+  "embedder_type":     "hubert"
+}
