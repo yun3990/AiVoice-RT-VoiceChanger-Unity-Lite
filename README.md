@@ -11,7 +11,7 @@ Runs a local Python WebSocket server and converts your voice through an RVC mode
 
 ## Download
 
-**[→ Download Latest Release](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity/releases)**
+**[→ Download Latest Release](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)**
 
 > **Want Unity SDK integration?**  
 > The Pro version includes full C# source, sample scene, and Unity SDK.  
@@ -37,7 +37,7 @@ Runs a local Python WebSocket server and converts your voice through an RVC mode
 
 ## First-Time Setup
 
-1. Download and extract the zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity/releases)
+1. Download and extract the zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
 2. Place base model files in `ServerPack/models/base/` (see below)
 3. Run `AiVoice.exe`
 
@@ -54,9 +54,9 @@ The following will be downloaded and installed automatically:
 
 ## Base Models (Required)
 
-Base model files are provided as a **separate download** via the [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity/releases) page.
+Base model files are provided as a **separate download** via the [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases) page.
 
-1. Download the base models zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity/releases)
+1. Download the base models zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
 2. Extract and place files here:
 
 ```
@@ -145,6 +145,6 @@ Copyright © 2025 yun3990. All rights reserved.
 
 ## Links
 
-- **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity
+- **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
 - **Booth (Pro):** coming soon *(coming soon)*
-- **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity/issues
+- **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
