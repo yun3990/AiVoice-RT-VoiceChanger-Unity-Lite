@@ -514,25 +514,34 @@ class RvcEngine:
         if DEVICE == "cpu":
             self._is_half = False
 
+        # Auto-detect half precision support based on compute capability (before loading embedder)
+        if self._is_half and self.dev.type == "cuda":
+            try:
+                major, minor = torch.cuda.get_device_capability(0)
+                cc = major * 10 + minor
+                if cc < 80:
+                    print(f"[BOOT] GPU compute capability = {major}.{minor} (< 8.0). Falling back to float32 for stability.")
+                    self._is_half = False
+                else:
+                    print(f"[BOOT] GPU compute capability = {major}.{minor}. float16 enabled.")
+            except Exception:
+                print("[WARN] Could not detect GPU compute capability. Falling back to float32.")
+                self._is_half = False
+
         if EMBEDDER_TYPE == "contentvec":
             self.embedder = FairseqContentvec().loadModel(HUBERT_PATH, self.dev, self._is_half)
         else:
             self.embedder = FairseqHubert().loadModel(HUBERT_PATH, self.dev, self._is_half)
 
+        # Force float32 if half precision is disabled (e.g. compute capability < 8.0)
+        if not self._is_half and hasattr(self.embedder, 'model') and self.embedder.model is not None:
+            self.embedder.model = self.embedder.model.float()
+            print("[BOOT] Embedder forced to float32.")
+
         self.pitch = RMVPEOnnxPitchExtractor(
             file=RMVPE_MODEL_PATH,
             gpu=0 if DEVICE == "cuda" else -1
         )
-
-        # Auto-detect half precision support
-        if self._is_half and self.dev.type == "cuda":
-            try:
-                _test = torch.zeros(1, dtype=torch.float16, device=self.dev)
-                _test = _test + 1
-                del _test
-            except Exception:
-                print("[WARN] GPU does not support half precision. Falling back to float32.")
-                self._is_half = False
 
         self._model_lock = threading.Lock()
         self._models: Dict[str, ModelInfo] = {}
