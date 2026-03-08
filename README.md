@@ -52,12 +52,10 @@ The following will be downloaded and installed automatically:
 
 ---
 
-## Base Models (Required)
+## Base Models
 
-Base model files are provided as a **separate download** via the [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases) page.
-
-1. Download the base models zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
-2. Extract and place files here:
+Base model files (`hubert_base.pt`, `rmvpe.onnx`) are included in the package.  
+They are located at:
 
 ```
 ServerPack/
@@ -107,7 +105,7 @@ AiVoiceRelease/
 │   ├── core/
 │   │   └── rvc_ws_server.py
 │   ├── models/
-│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (separate download)
+│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (included)
 │   │   └── voices/          ← your RVC models here
 │   ├── wheels/
 │   └── OPEN_SOURCE_LICENSES.txt
