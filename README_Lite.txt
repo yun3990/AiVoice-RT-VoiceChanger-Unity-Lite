@@ -96,8 +96,9 @@ Optional: place `index.bin` or `added.index` in the same folder for FAISS index 
 ## File Structure
 
 ```
-AiVoiceRelease/
-├── AiVoice.exe              ← run this
+AiVoice-RT-VoiceChanger-Unity-Lite/
+├── AiVoiceRelease/
+│   └── AiVoice.exe              ← run this
 ├── ServerPack/
 │   ├── launch/
 │   │   ├── start_server.bat
@@ -111,8 +112,10 @@ AiVoiceRelease/
 │   │   └── voices/          ← your RVC models here
 │   ├── wheels/
 │   └── OPEN_SOURCE_LICENSES.txt
-└── ThirdParty/
-    └── wokada/
+├── ThirdParty/
+│   └── wokada/
+├── README.md
+└── README_Lite.txt
 ```
 
 ---
@@ -126,6 +129,19 @@ The Pro version includes everything in this release plus:
 - Unity project integration support
 
 **Available on Booth** *(coming soon)*
+
+---
+
+## Troubleshooting
+
+| Problem | Solution |
+|---|---|
+| Server does not start | Check that base models are in `ServerPack/models/base/` |
+| Setup hangs or fails | Check your internet connection and NVIDIA driver version |
+| No voice output | Make sure your mic is set as the default input device in Windows |
+| Model not appearing | Click Refresh in the control panel, or check folder structure |
+| High latency / stuttering | Use a smaller BlockFrames value or try the Low Latency preset |
+| RVC v2 .pth error | v2 .pth is not supported — export to ONNX first |
 
 ---
 
@@ -146,5 +162,6 @@ Copyright © 2025 yun3990. All rights reserved.
 ## Links
 
 - **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
-- **Booth (Pro):** coming soon *(coming soon)*
+- **Discord:** https://discord.gg/dNuxwnyszS
+- **Booth (Pro):** coming soon
 - **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
