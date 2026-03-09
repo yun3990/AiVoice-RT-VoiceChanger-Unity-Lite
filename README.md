@@ -52,10 +52,12 @@ The following will be downloaded and installed automatically:
 
 ---
 
-## Base Models
+## Base Models (Required)
 
-Base model files (`hubert_base.pt`, `rmvpe.onnx`) are included in the package.  
-They are located at:
+Base model files are provided as a **separate download** via the [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases) page.
+
+1. Download the base models zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
+2. Extract and place files here:
 
 ```
 ServerPack/
@@ -105,7 +107,7 @@ AiVoiceRelease/
 │   ├── core/
 │   │   └── rvc_ws_server.py
 │   ├── models/
-│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (included)
+│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (separate download)
 │   │   └── voices/          ← your RVC models here
 │   ├── wheels/
 │   └── OPEN_SOURCE_LICENSES.txt
@@ -127,6 +129,19 @@ The Pro version includes everything in this release plus:
 
 ---
 
+## Troubleshooting
+
+| Problem | Solution |
+|---|---|
+| Server does not start | Check that base models are in `ServerPack/models/base/` |
+| Setup hangs or fails | Check your internet connection and NVIDIA driver version |
+| No voice output | Make sure your mic is set as the default input device in Windows |
+| Model not appearing | Click Refresh in the control panel, or check folder structure |
+| High latency / stuttering | Use a smaller BlockFrames value or try the Low Latency preset |
+| RVC v2 .pth error | v2 .pth is not supported — export to ONNX first |
+
+---
+
 ## License (Lite / Evaluation Build)
 
 Copyright © 2025 yun3990. All rights reserved.
@@ -144,5 +159,6 @@ Copyright © 2025 yun3990. All rights reserved.
 ## Links
 
 - **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
-- **Booth (Pro):** coming soon *(coming soon)*
+- **Discord:** https://discord.gg/여기에초대코드
+- **Booth (Pro):** coming soon
 - **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
