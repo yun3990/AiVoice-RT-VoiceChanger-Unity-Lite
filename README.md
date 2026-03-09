@@ -96,8 +96,9 @@ Optional: place `index.bin` or `added.index` in the same folder for FAISS index 
 ## File Structure
 
 ```
-AiVoiceRelease/
-├── AiVoice.exe              ← run this
+AiVoice-RT-VoiceChanger-Unity-Lite/
+├── AiVoiceRelease/
+│   └── AiVoice.exe              ← run this
 ├── ServerPack/
 │   ├── launch/
 │   │   ├── start_server.bat
@@ -111,8 +112,10 @@ AiVoiceRelease/
 │   │   └── voices/          ← your RVC models here
 │   ├── wheels/
 │   └── OPEN_SOURCE_LICENSES.txt
-└── ThirdParty/
-    └── wokada/
+├── ThirdParty/
+│   └── wokada/
+├── README.md
+└── README_Lite.txt
 ```
 
 ---
@@ -159,6 +162,6 @@ Copyright © 2025 yun3990. All rights reserved.
 ## Links
 
 - **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
-- **Discord:** https://discord.gg/WNVPrSkg
+- **Discord:** https://discord.gg/dNuxwnyszS
 - **Booth (Pro):** coming soon
 - **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
