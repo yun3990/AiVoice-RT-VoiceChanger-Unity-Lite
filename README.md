@@ -159,6 +159,6 @@ Copyright © 2025 yun3990. All rights reserved.
 ## Links
 
 - **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
-- **Discord:** https://discord.gg/여기에초대코드
+- **Discord:** https://discord.gg/WNVPrSkg
 - **Booth (Pro):** coming soon
 - **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
