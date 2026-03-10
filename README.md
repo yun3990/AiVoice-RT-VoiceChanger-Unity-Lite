@@ -1,9 +1,12 @@
-# AiVoice Realtime Voice Changer
-
-Free evaluation build for testing only (non-commercial, no redistribution). Full Unity SDK integration is available in the Pro version.
+# AiVoice — Real-time RVC Voice Changer
 
 Real-time RVC-based voice conversion app for Windows.  
+This Lite build is intended for testing a local runtime flow used in a Unity-related workflow.
+
 Runs a local Python WebSocket server and converts your voice through an RVC model with low latency.
+
+No cloud, no API key — runs entirely on your machine.  
+Bring your own RVC voice models.
 
 > Latency varies depending on your GPU. RTX 3060+ recommended for best results. Lower GPUs may work with reduced settings.
 
@@ -13,10 +16,6 @@ Runs a local Python WebSocket server and converts your voice through an RVC mode
 
 **[→ Download Latest Release](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)**
 
-> **Want Unity SDK integration?**  
-> The Pro version includes full C# source, sample scene, and Unity SDK.  
-> **Available on Booth:** https://booth.pm/ko/items/8065372
-
 ---
 
 ## Requirements
@@ -24,29 +23,31 @@ Runs a local Python WebSocket server and converts your voice through an RVC mode
 | | |
 |---|---|
 | OS | Windows 10/11 64-bit |
-| GPU | NVIDIA GPU (CUDA-capable, driver 551.61+ recommended / 528.33+ minimum) |
+| GPU | NVIDIA GPU with CUDA support |
 | RAM | 8GB+ |
 | Storage | ~6GB (after setup) |
 | Internet | Required for first-time setup only |
 
 > **AMD GPU / CPU-only is not supported.**  
 > **Mac and Linux are not currently supported.** Windows only.  
-> If setup fails due to a driver or CUDA issue, please check that your NVIDIA driver is up to date before reporting.
+> Lower-end NVIDIA GPUs may still run the app with reduced settings.  
+> For example, **GTX 1660 Super worked in limited testing, but smooth real-time performance is not guaranteed.**  
+> If setup fails, update your NVIDIA driver first.
 
 ---
 
-## First-Time Setup
+## Getting Started
 
 1. Download and extract the zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
 2. Place your RVC model in `ServerPack/models/voices/YourModelName/`
 3. Run `AiVoice.exe`
 
 Setup runs automatically on first launch.  
-If the server does not start automatically, run `ServerPack/launch/start_server.bat` manually.  
-Typical duration: **10–20 minutes** (may be longer depending on internet speed and hardware).
+First-time setup may take a while depending on internet speed and hardware.  
+If the server does not start automatically, run `ServerPack/launch/start_server.bat` manually.
 
 The following will be downloaded and installed automatically:
-- Python 3.10.11 (embedded, isolated — no existing Python installation required, no conflicts)
+- Python 3.10.11 (embedded, isolated — no conflicts with your system Python)
 - PyTorch 2.5.1 + CUDA 12.4 (~3GB)
 - Required Python libraries
 
@@ -91,51 +92,12 @@ Optional: place `index.bin` or `added.index` in the same folder for FAISS index 
 
 ---
 
-## File Structure
-
-```
-AiVoice-RT-VoiceChanger-Unity-Lite/
-├── AiVoiceRelease/
-│   └── AiVoice.exe              ← run this
-├── ServerPack/
-│   ├── launch/
-│   │   ├── start_server.bat
-│   │   └── setup_env.bat
-│   ├── config/
-│   │   └── server_config.json
-│   ├── core/
-│   │   └── rvc_ws_server.py
-│   ├── models/
-│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (included)
-│   │   └── voices/          ← your RVC models here
-│   ├── wheels/
-│   └── OPEN_SOURCE_LICENSES.txt
-├── ThirdParty/
-│   └── wokada/
-├── README.md
-└── README_Lite.txt
-```
-
----
-
-## Pro Version (Unity SDK)
-
-The Pro version includes everything in this release plus:
-
-- Full Unity C# source (`ServerLauncher.cs`, `RvcControlPanel.cs`, etc.)
-- Sample scene — ready to test out of the box
-- Unity project integration support
-
-**Available on Booth:** https://booth.pm/ko/items/8065372
-
----
-
 ## Troubleshooting
 
 | Problem | Solution |
 |---|---|
 | Server does not start | Check that base models are in `ServerPack/models/base/` |
-| Setup hangs or fails | Check your internet connection and NVIDIA driver version |
+| Setup hangs or fails | Check your internet connection and update your NVIDIA driver |
 | No voice output | Make sure your mic is set as the default input device in Windows |
 | Model not appearing | Click Refresh in the control panel, or check folder structure |
 | High latency / stuttering | Use a smaller BlockFrames value or try the Low Latency preset |
@@ -143,14 +105,12 @@ The Pro version includes everything in this release plus:
 
 ---
 
-## License (Lite / Evaluation Build)
+## License
 
 Copyright © 2025 yun3990. All rights reserved.
 
-- This Lite build is provided for evaluation purposes only.
-- Personal, non-commercial use is permitted for evaluation.
+- This Lite build is provided for personal, non-commercial use only.
 - Redistribution, reuploading, repackaging, and modification for distribution are prohibited.
-- Commercial use and redistribution rights are granted only with the paid version (Booth).
 
 > Third-party libraries included in this package are governed by their respective licenses.  
 > See [`ServerPack/OPEN_SOURCE_LICENSES.txt`](ServerPack/OPEN_SOURCE_LICENSES.txt) for details.
@@ -160,6 +120,5 @@ Copyright © 2025 yun3990. All rights reserved.
 ## Links
 
 - **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
-- **Discord:** https://discord.gg/dNuxwnyszS
-- **Booth (Pro):** https://booth.pm/ko/items/8065372
 - **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
+- **Discord:** https://discord.gg/dNuxwnyszS
