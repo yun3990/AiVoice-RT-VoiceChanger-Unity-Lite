@@ -15,7 +15,7 @@ Runs a local Python WebSocket server and converts your voice through an RVC mode
 
 > **Want Unity SDK integration?**  
 > The Pro version includes full C# source, sample scene, and Unity SDK.  
-> **Available on Booth** *(coming soon)*
+> **Available on Booth:** https://booth.pm/ko/items/8065372
 
 ---
 
@@ -38,7 +38,7 @@ Runs a local Python WebSocket server and converts your voice through an RVC mode
 ## First-Time Setup
 
 1. Download and extract the zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
-2. Place base model files in `ServerPack/models/base/` (see below)
+2. Place your RVC model in `ServerPack/models/voices/YourModelName/`
 3. Run `AiVoice.exe`
 
 Setup runs automatically on first launch.  
@@ -52,12 +52,10 @@ The following will be downloaded and installed automatically:
 
 ---
 
-## Base Models (Required)
+## Base Models
 
-Base model files are provided as a **separate download** via the [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases) page.
-
-1. Download the base models zip from [Releases](https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/releases)
-2. Extract and place files here:
+Base model files (`hubert_base.pt`, `rmvpe.onnx`) are included in the package.  
+They are located at:
 
 ```
 ServerPack/
@@ -67,7 +65,7 @@ ServerPack/
         └── rmvpe.onnx
 ```
 
-> **The server will not start without these files.**
+> **The server will not start without these files.** Do not move or delete them.
 
 ---
 
@@ -108,7 +106,7 @@ AiVoice-RT-VoiceChanger-Unity-Lite/
 │   ├── core/
 │   │   └── rvc_ws_server.py
 │   ├── models/
-│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (separate download)
+│   │   ├── base/            ← hubert_base.pt, rmvpe.onnx (included)
 │   │   └── voices/          ← your RVC models here
 │   ├── wheels/
 │   └── OPEN_SOURCE_LICENSES.txt
@@ -128,7 +126,7 @@ The Pro version includes everything in this release plus:
 - Sample scene — ready to test out of the box
 - Unity project integration support
 
-**Available on Booth** *(coming soon)*
+**Available on Booth:** https://booth.pm/ko/items/8065372
 
 ---
 
@@ -163,5 +161,5 @@ Copyright © 2025 yun3990. All rights reserved.
 
 - **GitHub:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite
 - **Discord:** https://discord.gg/dNuxwnyszS
-- **Booth (Pro):** coming soon
+- **Booth (Pro):** https://booth.pm/ko/items/8065372
 - **Issues / Bug Reports:** https://github.com/yun3990/AiVoice-RT-VoiceChanger-Unity-Lite/issues
